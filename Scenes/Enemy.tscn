@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dimfbq4bqpfky"]
+
+[ext_resource type="PackedScene" uid="uid://chb1fdc626qje" path="res://assets/Big arm.glb" id="1_m1htj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wovta"]
+radius = 0.523351
+height = 1.49566
+
+[node name="Enemy" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="Root Scene" parent="CharacterBody3D" instance=ExtResource("1_m1htj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 1.74533e-05, 0, -1.74533e-05, 1, 0, 0, 0, 1, 0.00265408, 0.858314, 0)
+shape = SubResource("CapsuleShape3D_wovta")

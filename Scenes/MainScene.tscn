@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm6f2e680tf4q"]
+[gd_scene load_steps=8 format=3 uid="uid://dm6f2e680tf4q"]
 
 [ext_resource type="PackedScene" uid="uid://bw0dhumjpcqmi" path="res://Scenes/player.tscn" id="1_hpc76"]
+[ext_resource type="Material" uid="uid://dfi1fnuyjsd18" path="res://Materials/grass.tres" id="2_tr2i4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hpc76"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_tr2i4"]
 sky_material = SubResource("ProceduralSkyMaterial_hpc76")
@@ -24,10 +25,7 @@ tonemap_mode = 2
 environment = SubResource("Environment_nhkr4")
 
 [node name="Player" parent="." instance=ExtResource("1_hpc76")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043105066, 0.2543993, 8.214289)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.83206064, 0.5546847, 0, -0.5546847, 0.83206064, 0, 3.1240475, 10.963525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0431051, 0.254399, 8.21429)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 
@@ -35,6 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 0.83206064, 0.5546847, 0, -0.5546847, 0.8320
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+material_override = ExtResource("2_tr2i4")
 mesh = SubResource("PlaneMesh_cihdc")
 skeleton = NodePath("../..")
 
